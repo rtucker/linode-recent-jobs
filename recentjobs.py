@@ -24,7 +24,7 @@ def list_all_jobs(jobs):
     out = ''
     out += '%8s %16s %16s %s %s\n' % ('JobID', 'Submit', 'Finish', '?', 'Description')
     out += '-'*79 + '\n'
-    for i in jobs:
+    for i in sorted(jobs, key=itemgetter('JOBID'), reverse=False):
         out += '%8i %16s %16s %i %s\n' % (i['JOBID'], i['ENTERED_DT'][:16], i['HOST_FINISH_DT'][:16], i['HOST_SUCCESS'], i['LABEL'])
 
     return out
