@@ -1,0 +1,27 @@
+This is a handy script to print out the recent jobs for a given Linode.
+I use it to send news at boottime so I know why my Linode rebooted:
+
+(in rc.local)
+    echo -n "Sending startup mail... "
+    /path/to/linode-recent-jobs/recentjobs.py --linode-id=1234 --all-jobs | mail -s "`hostname` reboot `date`" root
+    /path/to/linode-recent-jobs/recentjobs.py --linode-id=1234 | mail mycellphone@example.com
+    echo "done."
+
+You need to specify an API key always, and a Linode ID for everything other
+than --list-linodes (which will show you your Linode ID).  You can either
+specify them on the command line with --api-key= or --linode-id= respectively,
+or hard-code them in secrets.py (see secrets.py.orig for example).
+
+Usage: recentjobs.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -a, --all-jobs        Display a list of all jobs in the job history.
+  -l, --last-boot       Display the timestamp and reason of the last boot.
+                        (default)
+  -K APIKEY, --api-key=APIKEY
+                        Specify the API key (can also put in secrets.py).
+  -I LINODEID, --linode-id=LINODEID
+                        Specify the Linode ID (can also put in secrets.py).
+  --list-linodes        List Linode IDs associated with this account.
+
