@@ -3,7 +3,8 @@
 # Uses the Linode API to display recent jobs for your Linode.
 # Useful for running on boot to see why your Linode rebooted.
 
-# Needs api.py somewhere nearby.
+# Needs api.py somewhere nearby.  You can get this from:
+#   Python Bindings @ http://www.linode.com/api/autodoc.cfm
 
 # Ryan Tucker <rtucker@gmail.com>, 2009/08/04
 
