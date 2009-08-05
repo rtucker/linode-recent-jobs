@@ -1,4 +1,3 @@
-api.py
 secrets.py
 *.pyc
 *.pyo
