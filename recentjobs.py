@@ -13,6 +13,8 @@ import api
 import optparse
 import sys
 
+from operator import itemgetter
+
 bootlabels = ['Lassie initiated boot', 'System Boot', 'Host initiated restart']
 
 def get_jobs(instance, linodeid):
@@ -28,8 +30,7 @@ def list_all_jobs(jobs):
     return out
 
 def last_boot(jobs):
-    boots = {}
-    for i in jobs:
+    for i in sorted(jobs, key=itemgetter('JOBID'), reverse=True):
         for j in bootlabels:
             if i['LABEL'].startswith(j):
                 return 'Booted %s due to: %s\n' % (i['HOST_FINISH_DT'][:16], i['LABEL'])
