@@ -11,7 +11,6 @@
 
 import api
 import optparse
-import secrets
 import sys
 
 bootlabels = ['Lassie initiated boot', 'System Boot', 'Host initiated restart']
