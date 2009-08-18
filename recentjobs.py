@@ -15,7 +15,8 @@ import sys
 
 from operator import itemgetter
 
-bootlabels = ['Lassie initiated boot', 'System Boot', 'Host initiated restart']
+bootlabels = ['Lassie initiated boot', 'System Boot',
+              'Host initiated restart', 'Lish initiated boot']
 
 def get_jobs(instance, linodeid):
     return instance.linode_job_list(linodeid=linodeid)
