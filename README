@@ -12,6 +12,9 @@ than --list-linodes (which will show you your Linode ID).  You can either
 specify them on the command line with --api-key= or --linode-id= respectively,
 or hard-code them in secrets.py (see secrets.py.orig for example).
 
+Note: Be sure to "git submodule init" and "git submodule update" to pull
+in the Python API bindings.
+
 Usage: recentjobs.py [options]
 
 Options:
