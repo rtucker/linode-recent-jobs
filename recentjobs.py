@@ -37,7 +37,8 @@ def last_boot(jobs):
     for i in sorted(jobs, key=itemgetter('JOBID'), reverse=True):
         for j in bootlabels:
             if i['LABEL'].startswith(j):
-                return 'Booted %s due to: %s\n' % (i['HOST_FINISH_DT'][:16], i['LABEL'])
+                if i['HOST_SUCCESS'] == 1:
+                    return 'Booted %s due to: %s\n' % (i['HOST_FINISH_DT'][:16], i['LABEL'])
     return 'No information.'
 
 def list_linodes(instance):
