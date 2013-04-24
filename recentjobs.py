@@ -15,7 +15,7 @@ import sys
 from operator import itemgetter
 
 sys.path.insert(0,'api')
-import api
+from linode import api
 del sys.path[0]
 
 bootlabels = ['Lassie initiated boot', 'System Boot',
