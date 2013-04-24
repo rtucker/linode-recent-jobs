@@ -1,3 +1,3 @@
 [submodule "api"]
 	path = api
-	url = http://git.atxconsulting.com/linode/
+	url = git://github.com/tjfontaine/linode-python.git
