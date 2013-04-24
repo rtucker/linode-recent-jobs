@@ -10,12 +10,14 @@
 # Ryan Tucker <rtucker@gmail.com>, 2009/08/04
 
 import optparse
+import os
 import sys
 
 from operator import itemgetter
 
-sys.path.insert(0,'api')
-from linode import api
+curdir = os.path.dirname(sys.argv[0])
+sys.path.insert(0, os.path.join(curdir, 'api', 'linode'))
+import api
 del sys.path[0]
 
 bootlabels = ['Lassie initiated boot', 'System Boot',
